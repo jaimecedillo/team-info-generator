@@ -7,7 +7,7 @@ const path = require('path');
 
 const OUTPUT_DIR = path.resolve(__dirname, "dist");
 const outputPath = path.join(OUTPUT_DIR, "index.html");
-const render = require("./src/page-template");
+const render = require("./lib/page-template");
 
 
 const teamMembers = [];
@@ -136,7 +136,8 @@ function writeFile() {
     if (!fs.existsSync(OUTPUT_DIR)) {
         fs.mkdirSync(OUTPUT_DIR)
     }
-    fs.writeFileSync(outputPath, render(teamMembers), "utf-8")
+    fs.writeFileSync(outputPath, render(teamMembers), "utf-8");
+    console.log('HTML file has been created!')
 }
 
 
