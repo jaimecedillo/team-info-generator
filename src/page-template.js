@@ -1,3 +1,7 @@
+const path = require("path");
+const fs = require("fs");
+
+
 // create global variable that holds HTML
 
 
