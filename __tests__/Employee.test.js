@@ -23,8 +23,7 @@ test('Get employees email value', () => {
 });
 
 test("Get all of employee's info", () => {
-    const testEmpl = 'Employee'
     const employee = new Employee('John', 353, 'test@test.com');
-    expect(employee.getRole()).toBe(testEmpl);
+    expect(employee.getRole()).toBe('Employee');
 
 })
