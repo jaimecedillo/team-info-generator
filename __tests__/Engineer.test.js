@@ -7,7 +7,7 @@ test('Set github account', () => {
 
 test('Get github account', () => {
     const engineer = new Engineer('John', 353, 'test@test.com', "username");
-    expect(engineer.github).toBe("username");
+    expect(engineer.getGitHub()).toBe("username");
 })
 
 test("Get all of engineer's info", () => {
