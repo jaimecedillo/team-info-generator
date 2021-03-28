@@ -12,6 +12,7 @@ const render = require("./lib/page-template");
 
 const teamMembers = [];
 
+// managers questions
 function createManager() {
     inquirer.prompt([
         {
@@ -43,7 +44,7 @@ function createManager() {
         })
 
 }
-
+// interns questions
 function createIntern() {
     inquirer.prompt([
         {
@@ -73,7 +74,7 @@ function createIntern() {
             whatsNext();
         })
 }
-
+// engineer questions
 function createEngineer() {
     inquirer.prompt([
         {
@@ -98,15 +99,15 @@ function createEngineer() {
         }
     ])
         .then((ingans) => {
-            const newIntern = new Intern(ingans.name, ingans.id, ingans.email, ingans.github);
-            teamMembers.push(newIntern);
+            const newEngineer = new Engineer(ingans.name, ingans.id, ingans.email, ingans.github);
+            teamMembers.push(newEngineer);
             whatsNext();
         })
 }
 
 
 
-
+// user options after card is created
 function whatsNext() {
     inquirer.prompt([
         {
@@ -131,7 +132,7 @@ function whatsNext() {
         })
 }
 
-
+// write HTML function
 function writeFile() {
     if (!fs.existsSync(OUTPUT_DIR)) {
         fs.mkdirSync(OUTPUT_DIR)
